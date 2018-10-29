@@ -1,0 +1,9 @@
+@font-face {
+  font-family: Din;
+  src: url(./D-DINCondensed.otf);
+}
+
+body,
+* {
+  font-family: Din;
+}
