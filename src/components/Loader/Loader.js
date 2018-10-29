@@ -1,59 +1,40 @@
 import React from 'react';
 
-class Loader extends React.PureComponent {
-  width = 2;
+import { keyframes } from 'styled-components';
 
-  componentDidMount() {
-    this.stretchLine();
+const expandWidth = keyframes`
+  from {
+    width: 2px;
   }
-
-  componentWillUnmount() {
-    cancelAnimationFrame(this.stretchLine);
+  to{
+    width: 200px;
   }
+`;
 
-  stretchLine = () => {
-    if (!this.line) {
-      cancelAnimationFrame(this.stretchLine);
-      return;
-    }
-
-    requestAnimationFrame(this.stretchLine);
-
-    this.width += 2;
-    if (this.width >= 200) this.width = 2;
-
-    this.line.style.width = `${this.width}px`;
-  };
-
-  render() {
-    return (
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          bottom: 0,
-          left: 0,
-          right: 0,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          flexDirection: 'column',
-          color: 'rgba(255, 255, 255, 0.6)',
-        }}
-      >
-        <div>LOADING</div>
-        <div
-          ref={element => (this.line = element)}
-          style={{
-            height: 1,
-            width: 2,
-            marginTop: 14,
-            backgroundColor: '#fe9156',
-          }}
-        />
-      </div>
-    );
-  }
-}
-
-export default Loader;
+export default () => (
+  <div
+    style={{
+      position: 'absolute',
+      top: 0,
+      bottom: 0,
+      left: 0,
+      right: 0,
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexDirection: 'column',
+      color: 'rgba(255, 255, 255, 0.6)',
+    }}
+  >
+    <div>LOADING</div>
+    <div
+      style={{
+        height: 1,
+        marginTop: 14,
+        backgroundColor: '#fe9156',
+        animation: `${expandWidth} 2.75s cubic-bezier(0.19, 1, 0.22, 1) infinite`,
+        animationFillMode: 'forwards',
+      }}
+    />
+  </div>
+);

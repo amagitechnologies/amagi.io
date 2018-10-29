@@ -1,5 +1,6 @@
 import * as THREE from 'three';
 import * as TWEEN from 'es6-tween';
+import Animate from 'utils/general/animate';
 import FlashingStarShader from './FlashingStarShader';
 import BlueStar from 'assets/images/bluestar.png';
 import Orangestar from 'assets/images/orangestar.png';
@@ -176,23 +177,22 @@ function createFlashingStars({
 
     const coords = { x, y };
 
-    new TWEEN.Tween(coords)
-      .to(
-        {
-          x: coords.x + 1,
-          y: coords.y + 0.5,
-        },
-        2000 * i
-      )
-      .easing(TWEEN.Easing.Quadratic.Out)
-      .repeat(Infinity)
-      .yoyo(true)
-      .on('update', ({ x, y }) => {
+    Animate({
+      from: coords,
+      to: {
+        x: coords.x + 1,
+        y: coords.y + 0.5,
+      },
+      duration: 2000 * i,
+      easing: TWEEN.Easing.Quadratic.Out,
+      repeat: Infinity,
+      yoyo: true,
+      update: ({ x, y }) => {
         flashingStars.geometry.attributes.position.array[i] = x;
         flashingStars.geometry.attributes.position.array[i + 1] = y;
         flashingStars.geometry.attributes.position.needsUpdate = true;
-      })
-      .start();
+      },
+    });
   }
 
   this.update = ({ mouseX = 0, mouseY = 0 } = {}) => {

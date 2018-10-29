@@ -1,5 +1,8 @@
 import React from 'react';
+import Animate from 'utils/general/animate';
 import * as TWEEN from 'es6-tween';
+
+import FACE_LINKS from 'constants/prismfaces';
 
 import { ScreenClassRender } from 'react-grid-system';
 import {
@@ -9,23 +12,8 @@ import {
   RightLinkLine,
 } from './NavigatorComponents';
 
-const FACE_LINKS = {
-  '-1': {
-    left: null,
-    right: 'AMAGI',
-  },
-  '0': {
-    left: 'WORK WITH US',
-    right: 'PROJECTS',
-  },
-  '1': {
-    left: 'AMAGI',
-    right: null,
-  },
-};
-
 class Navigator extends React.PureComponent {
-  isNavigating = false
+  isNavigating = false;
 
   state = {
     activePage: 0,
@@ -46,69 +34,57 @@ class Navigator extends React.PureComponent {
   };
 
   changeLinkText = ({ isNext = true } = {}) => {
-    this.isNavigating = true
-    const down = new TWEEN.Tween({
-      scale: 1,
-    })
-      .to(
-        {
-          scale: 0,
-        },
-        200
-      )
-      .easing(TWEEN.Easing.Back.InOut)
-      .on('update', ({ scale }) => {
+    this.isNavigating = true;
+
+    const down = Animate({
+      from: { scale: 1 },
+      to: { scale: 0 },
+      duration: 200,
+      easing: TWEEN.Easing.Back.InOut,
+      update: ({ scale }) => {
         this.leftText.style.transform = `rotate(-90deg) scale(${scale})`;
         this.rightText.style.transform = `rotate(90deg) scale(${scale})`;
-      })
-      .on('complete', () => {
+      },
+      complete: () => {
         this.setState({
           activePage: isNext
             ? this.state.activePage + 1
             : this.state.activePage - 1,
         });
-        this.isNavigating = false
-      })
-      .start();
+        this.isNavigating = false;
+      },
+    });
 
-    const up = new TWEEN.Tween({
-      scale: 0,
-    })
-      .to(
-        {
-          scale: 1,
-        },
-        200
-      )
-      .easing(TWEEN.Easing.Back.InOut)
-      .on('update', ({ scale }) => {
+    const up = Animate({
+      from: { scale: 0 },
+      to: { scale: 1 },
+      duration: 200,
+      easing: TWEEN.Easing.Back.InOut,
+      update: ({ scale }) => {
         this.leftText.style.transform = `rotate(-90deg) scale(${scale})`;
         this.rightText.style.transform = `rotate(90deg) scale(${scale})`;
-      });
+      },
+      autoStart: false,
+    });
 
     down.chainedTweens(up);
   };
 
   componentDidMount() {
     if (this.leftLine && this.rightLine) {
-      new TWEEN.Tween({
-        height: 1,
-      })
-        .to(
-          {
-            height: 100,
-          },
-          1750
-        )
-        .easing(TWEEN.Easing.Exponential.Out)
-        .delay(1000)
-        .on('update', ({ height }) => {
+      Animate({
+        from: { height: 1 },
+        to: { height: 100 },
+        duration: 1750,
+        easing: TWEEN.Easing.Exponential.Out,
+        delay: 1000,
+        update: ({ height }) => {
           if (this.leftLine && this.rightLine) {
             this.leftLine.style.height = `${height}%`;
             this.rightLine.style.height = `${height}%`;
           }
-        })
-        .start();
+        },
+      });
     }
   }
 
@@ -132,7 +108,9 @@ class Navigator extends React.PureComponent {
                 className="text left"
                 ref={element => (this.leftText = element)}
               >
-                {FACE_LINKS[activePage].left}
+                {FACE_LINKS[activePage].left && (
+                  <span>{FACE_LINKS[activePage].left}</span>
+                )}
               </div>
               <LeftLinkLine innerRef={element => (this.leftLine = element)} />
             </LeftLink>,
@@ -145,7 +123,9 @@ class Navigator extends React.PureComponent {
                 className="text right"
                 ref={element => (this.rightText = element)}
               >
-                {FACE_LINKS[activePage].right}
+                {FACE_LINKS[activePage].right && (
+                  <span>{FACE_LINKS[activePage].right}</span>
+                )}
               </div>
               <RightLinkLine innerRef={element => (this.rightLine = element)} />
             </RightLink>,

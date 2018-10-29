@@ -1,7 +1,6 @@
 import React from 'react';
+import Animate from 'utils/general/animate';
 import styled from 'styled-components';
-
-import * as TWEEN from 'es6-tween';
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,20 +19,18 @@ const Wrapper = styled.div`
 
 class CenteredWrapper extends React.PureComponent {
   componentDidMount = () => {
-    new TWEEN.Tween({
-      opacity: 0,
-    })
-      .easing(TWEEN.Easing.Quadratic.In)
-      .to(
-        {
-          opacity: 1,
-        },
-        1500
-      )
-      .on('update', ({ opacity }) => {
+    Animate({
+      from: {
+        opacity: 0,
+      },
+      to: {
+        opacity: 1,
+      },
+      duration: 1500,
+      update: ({ opacity }) => {
         if (this.wrapper) this.wrapper.style.opacity = opacity;
-      })
-      .start();
+      },
+    });
   };
 
   render() {

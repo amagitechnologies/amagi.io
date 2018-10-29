@@ -70,11 +70,12 @@ class Projects extends React.PureComponent {
               <Visible xs sm md>
                 <h2 className="secondary-text">Software Projects</h2>
               </Visible>
-              {(active === 'software' || ['xs', 'sm', 'md'].includes(screen)) && [
+              {(active === 'software' ||
+                ['xs', 'sm', 'md'].includes(screen)) && [
                 <div key="software-project-1">
                   <b>AXA</b>
                   {AXA_SW_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`axa-project-${idx}`}>
+                    <Project screen={screen} key={`axa-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
@@ -83,7 +84,7 @@ class Projects extends React.PureComponent {
                 <div key="software-project-2">
                   <b>SPLITMEDIALABS</b>
                   {SPLIT_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`split-project-${idx}`}>
+                    <Project screen={screen} key={`split-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
@@ -92,7 +93,7 @@ class Projects extends React.PureComponent {
                 <div key="software-project-3">
                   <b>REPUBLIC OF THE PHILIPPINES</b>
                   {GOVT_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`govt-project-${idx}`}>
+                    <Project screen={screen} key={`govt-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
@@ -101,7 +102,7 @@ class Projects extends React.PureComponent {
                 <div key="software-project-4">
                   <b>PERRY'S GROUP</b>
                   {PERRY_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`govt-project-${idx}`}>
+                    <Project screen={screen} key={`govt-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
@@ -110,7 +111,7 @@ class Projects extends React.PureComponent {
                 <div key="software-project-5">
                   <b>TAYTAY DOCTORS MULTISPECIALTY HOSPITAL</b>
                   {TDMH_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`govt-project-${idx}`}>
+                    <Project screen={screen} key={`govt-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
@@ -127,7 +128,7 @@ class Projects extends React.PureComponent {
                 <div key="devops-project-1">
                   <b>AXA</b>
                   {AXA_DO_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`devops-project-${idx}`}>
+                    <Project screen={screen} key={`devops-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
@@ -136,12 +137,12 @@ class Projects extends React.PureComponent {
                 <div key="devops-project-2">
                   <b>EMOOV</b>
                   {EMOOV_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`devops-project-${idx}`}>
+                    <Project screen={screen} key={`devops-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
                   ))}
-                </div>
+                </div>,
               ]}
               <Visible xs sm md>
                 <div className="vertical-gutter" />
@@ -153,7 +154,7 @@ class Projects extends React.PureComponent {
                 <div key="data-project-1">
                   <b>AUSTRALIAN BOOKMAKING COMPANY</b>
                   {GAMBLING_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`data-project-${idx}`}>
+                    <Project screen={screen} key={`data-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
@@ -162,12 +163,12 @@ class Projects extends React.PureComponent {
                 <div key="data-project-2">
                   <b>BAY LAW GROUP</b>
                   {LEGAL_PROJECTS.map(({ name, details }, idx) => (
-                    <Project key={`data-project-${idx}`}>
+                    <Project screen={screen} key={`data-project-${idx}`}>
                       <div className="thumbnail">{name}</div>
                       <div className="description">{details}</div>
                     </Project>
                   ))}
-                </div>
+                </div>,
               ]}
             </Section>
           </Wrapper>

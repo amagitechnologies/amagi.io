@@ -1,4 +1,22 @@
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+const shrinkWidth = keyframes`
+  from {
+    width: 26px;
+  }
+  to {
+    width: 3px;
+  }
+`;
+
+const expandHeight = keyframes`
+from {
+  width: 3px;
+}
+to {
+  width: 26px;
+}
+`;
 
 const Link = styled.div`
   position: absolute;
@@ -12,18 +30,12 @@ const Link = styled.div`
   overflow: hidden;
   transition: background-color 275ms ease-out;
 
-  ${props =>
-    !props.last &&
-    `&:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-    transition: background-color 275ms ease-in;
-    cursor: pointer;
-  }`};
-
   .text {
     font-size: 1rem;
     font-weight: bold;
     letter-spacing: 0.1rem;
+    width: 100vh;
+    text-align: center;
 
     &.left {
       transform: rotate(-90deg);
@@ -32,7 +44,49 @@ const Link = styled.div`
     &.right {
       transform: rotate(90deg);
     }
+
+    span {
+      position: relative;
+
+      &:before,
+      &:after {
+        content: '';
+        width: 3px;
+        height: 2px;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 2px;
+        border-bottom-left-radius: 2px;
+        border-bottom-right-radius: 2px;
+        background-color: #ffffff;
+        position: absolute;
+        top: calc(50% - 2px);
+        animation: ${expandHeight} 550ms cubic-bezier(0.19, 1, 0.22, 1);
+        animation-fill-mode: forwards;
+      }
+
+      &:before {
+        left: -45px;
+      }
+
+      &:after {
+        right: -45px;
+      }
+    }
   }
+
+  ${props =>
+    !props.last &&
+    `&:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: background-color 275ms ease-in;
+    cursor: pointer;
+
+    .text span:before,
+    .text span:after {
+      animation: ${shrinkWidth} 550ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      animation-fill-mode: forwards;
+    }
+  }`};
 `;
 
 const LinkLine = styled.div`

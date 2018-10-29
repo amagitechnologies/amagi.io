@@ -12,9 +12,9 @@ export const Project = styled.div`
   }
 
   .thumbnail {
-    min-width: 150px;
+    min-width: ${props => (['xs'].includes(props.screen) ? '120px' : '150px')};
     min-height: 75px;
-    width: 150px;
+    width: ${props => (['xs'].includes(props.screen) ? '120px' : '150px')};
     height: 75px;
     margin-right: 16px;
     border: 1px solid;

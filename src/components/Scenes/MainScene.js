@@ -1,4 +1,5 @@
 import React from 'react';
+import Animate from 'utils/general/animate';
 import SceneManager from '../SceneManager';
 import FilmShader from './FilmShader';
 
@@ -52,20 +53,15 @@ class MainScene extends React.Component {
       false
     );
 
-    new TWEEN.Tween({
-      opacity: 0,
-    })
-      .to(
-        {
-          opacity: 1,
-        },
-        1500
-      )
-      .easing(TWEEN.Easing.Quadratic.In)
-      .on('update', ({ opacity }) => {
+    Animate({
+      from: { opacity: 0 },
+      to: { opacity: 1 },
+      duration: 1500,
+      easing: TWEEN.Easing.Quadratic.In,
+      update: ({ opacity }) => {
         this.wrapper.style.opacity = opacity;
-      })
-      .start();
+      },
+    });
 
     this.animate();
   };
@@ -81,19 +77,18 @@ class MainScene extends React.Component {
   };
 
   nextPage = () => {
-    new TWEEN.Tween({
-      rotation: THREE.Math.degToRad(this.currentRotation),
-      zoom: -1,
-    })
-      .to(
-        {
-          rotation: THREE.Math.degToRad(this.currentRotation - 90),
-          zoom: 0,
-        },
-        1250
-      )
-      .easing(TWEEN.Easing.Back.InOut)
-      .on('update', ({ rotation, zoom }) => {
+    Animate({
+      from: {
+        rotation: THREE.Math.degToRad(this.currentRotation),
+        zoom: -1,
+      },
+      to: {
+        rotation: THREE.Math.degToRad(this.currentRotation - 90),
+        zoom: 0,
+      },
+      duration: 1250,
+      easing: TWEEN.Easing.Back.InOut,
+      update: ({ rotation, zoom }) => {
         this.flashingStars.instances.map(instance => {
           instance.rotation.y = rotation;
           return rotation;
@@ -103,26 +98,25 @@ class MainScene extends React.Component {
           instance.position.z = zoom;
           return instance;
         });
-      })
-      .start();
+      },
+    });
 
     this.currentRotation -= 90;
   };
 
   previousPage = () => {
-    new TWEEN.Tween({
-      rotation: THREE.Math.degToRad(this.currentRotation),
-      zoom: -1,
-    })
-      .to(
-        {
-          rotation: THREE.Math.degToRad(this.currentRotation + 90),
-          zoom: 0,
-        },
-        1250
-      )
-      .easing(TWEEN.Easing.Back.InOut)
-      .on('update', ({ rotation, zoom }) => {
+    Animate({
+      from: {
+        rotation: THREE.Math.degToRad(this.currentRotation),
+        zoom: -1,
+      },
+      to: {
+        rotation: THREE.Math.degToRad(this.currentRotation + 90),
+        zoom: 0,
+      },
+      duration: 1250,
+      easing: TWEEN.Easing.Back.InOut,
+      update: ({ rotation, zoom }) => {
         this.flashingStars.instances.map(instance => {
           instance.rotation.y = rotation;
           return instance;
@@ -132,8 +126,8 @@ class MainScene extends React.Component {
           instance.position.z = zoom;
           return instance;
         });
-      })
-      .start();
+      },
+    });
 
     this.currentRotation += 90;
   };

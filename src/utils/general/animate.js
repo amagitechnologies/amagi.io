@@ -6,14 +6,26 @@ export default ({
   duration = 1000,
   delay = 0,
   easing = TWEEN.Easing.Linear.None,
+  repeat = 0,
+  yoyo = false,
   update = () => null,
   start = () => null,
+  complete = () => null,
+  autoStart = true,
 }) => {
-  new TWEEN.Tween(from)
+  const tween = new TWEEN.Tween(from)
     .to(to, duration)
     .delay(delay)
     .easing(easing)
+    .repeat(repeat)
+    .yoyo(yoyo)
     .on('update', update)
     .on('start', start)
-    .start();
+    .on('complete', complete);
+
+  if (autoStart) {
+    tween.start();
+  }
+
+  return tween;
 };
