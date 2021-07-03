@@ -1,0 +1,122 @@
+header.content {
+    text-align: center;
+    justify-content: center;
+    padding: 0;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+.buttons {
+    display: flex;
+    position: absolute;
+    flex-direction: row;
+    justify-content: center;
+    bottom: 10%;
+    width: 100%;
+}
+
+/* Form */
+
+#message-form {
+    box-sizing: border-box;
+    width: 50%;
+    height: 100%;
+    margin: 2% 0;
+}
+
+input {
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 5rem;
+    min-width: 13rem;
+    width: 100%;
+    font-family: din-2014;
+    font-size: .8rem;
+    font-weight: 500;
+    outline: none;
+    color: var(--dark);
+    background-color: rgba(242, 242, 242, 0.8);
+    border: 1px solid rgba(242, 242, 242, 0.8);
+    transition: border .15s ease-in;
+}
+
+input:active, input:focus, textarea:active, textarea:focus {
+    border: 1px solid var(--grey30);
+}
+
+textarea {
+    display: block;
+    box-sizing: border-box;
+    padding: 1rem;
+    border-radius: 1rem;
+    width: 100%;
+    font-family: din-2014;
+    font-size: .8rem;
+    font-weight: 500;
+    outline: none;
+    color: var(--dark);
+    background-color: rgba(242, 242, 242, 0.8);
+    border: 1px solid rgba(242, 242, 242, 0.8);
+    transition: border .15s ease-in;
+}
+
+label {
+    display: block;
+    margin-left: 1.5rem;
+    margin-bottom: .5rem;
+    color: var(--grey10);
+    font-weight: 600;
+}
+
+#input__personal-details {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 100%;
+}
+
+#input__personal-details div {
+    flex-basis: 48%;
+}
+
+#input__message {
+    margin: 5% 0;
+}
+
+@media only screen and (max-width: 768px) {
+    header.content {
+        justify-content: center;
+    }
+
+    article:last-of-type {
+        padding: 15% 10% 0;
+        justify-content: center;
+    }
+
+    article:last-of-type .copy {
+        height: auto;
+    }
+
+    #message-form {
+        height: auto;
+        width: 100%;
+    }
+
+    .buttons, #input__personal-details {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .input {
+        margin: 5% 0;
+    }
+
+    #input__personal-details div {
+        width: 100%;
+    }
+}

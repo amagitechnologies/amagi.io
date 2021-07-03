@@ -1,0 +1,22 @@
+.slideup {
+  transition: opacity 1s ease-in,
+              transform 1s ease-in;
+  transform: translateY(100%);
+}
+
+.slideup.visible {
+  transform: translateY(0);
+  opacity: 0.1;
+}
+
+.animation.slideup.hovered {
+  opacity: 1;
+}
+
+.fadein {
+  transition: opacity 1s ease-in;
+}
+
+.fadein.visible {
+  opacity: 1;
+}

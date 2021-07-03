@@ -10,10 +10,10 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
 
   <!-- Stylesheets -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500&display=swap" rel="stylesheet"> 
   <link href="global.css" rel="stylesheet">
-  <link href="index.css" rel="stylesheet">
-  <link href="animations.css" rel="stylesheet">
+  <link href="about.css" rel="stylesheet">
   <link rel="stylesheet" href="https://use.typekit.net/bxg1dss.css">
   <link href="assets/fonts/enhanced/index.css" rel="stylesheet">
 
@@ -96,92 +96,47 @@
   }
   </script>
 
-  <!-- Tu ne cede malis, ced contra audentior ito -->
-
+  <script
+    src="https://kit.fontawesome.com/297c891af6.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="./menu.js"></script>
 </head>
 
 <body>
-  <div class="dark-bg"></div>
-  <div class="bg"></div>
-
-  <!-- FROSTED GLASS EFFECT -->
-  <div class="drop-shadow">
-    <div class="glass"></div>
-  </div>
-
   <navigation-menu></navigation-menu>
   <div id="container">
     <main>
-      <template id="cube-template">
-        <div class="cube">
-          <div class="shadow"></div>
-          <div class="sides">
-            <div class="back"></div>
-            <div class="top"></div>
-            <div class="left"></div>
-            <div class="front"></div>
-            <div class="right"></div>
-            <div class="bottom"></div>
-          </div>
-        </div>
-      </template>
-      <article class="content" id="hero">
-      </article>
-      <article class="content" id="services">
-        <div class="copy animation fadein">
-          <h2>Services</h2>
-          <p class="subline">Solving Difficult Problems as a Service</p>
-        </div>
-        <div class="headlines">
-          <div class="headline" id="headline__consulting">
-            <div class="title animation fadein delay" >Consulting</div>
-            <div class="description fadein">AMAGI digital experts are exceptional at seeing through the challenges of organizations' decisions and operations to build effective solutions using modern technology.</div>
-          </div>
-          <div class="headline" id="headline__platform">
-            <div class="title animation fadein delay">Platforms</div>
-            <div class="description fadein">We work with companies around the world to take advantage of the services of our world-leading partners including Amazon Web Services, Microsoft Azure, and Salesforce.</div>
-          </div>
-          <div class="headline" id="headline__recruitment">
-            <div class="title animation fadein delay">Recruitment</div>
-            <div class="description fadein">AMAGI recruiters work to connect the best in technology and healthcare professionals to careers of the future. Our experts know how to find people with talent, intelligence, and potential to make a difference in your organization.</div>
-          </div>
-          <div class="headline" id="headline__training">
-            <div class="title animation fadein delay">Training</div>
-            <div class="description fadein">Amagi Academy teaches individuals and organizations to harness the power of modern technologies while empowering them to think differently about challenges they face through expert-led courses, workshops, events, and corporate trainings.</div>
-          </div>
-        </div>
-        <!-- <figure id="services__bg">
-          <img id="services__graphic--server" alt="view of server" src="assets/images/server-dark.svg" xmlns="http://www.w3.org/2000/svg">
-          <img id="services__graphic--desktop" alt="view of desktop" src="assets/images/desktop-dark.svg" xmlns="http://www.w3.org/2000/svg">
-          <img id="services__graphic--phone" alt="view of phone" src="assets/images/phone-dark.svg" xmlns="http://www.w3.org/2000/svg">
-        </figure> -->
-      </article>
-      <article class="content" id="industries">
-        <div class="copy animation fadein">
-          <h2>Industries</h2>
-          <p class="description">FinTech, MedTech, and More</p>
-        </div>
-        <div class="headlines">
-          <div class="headline" id="headline__fintech">
-            <div class="title large animation fadein delay">FinTech</div>
-            <div class="description fadein">Founded by financial services experts, AMAGI works with financial services enterprises, startups, and more to bring the future to everything from banking to payments to insurance.</div>
-          </div>
-          <div class="headline" id="headline__medtech">
-            <div class="title large animation fadein delay">MedTech</div>
-            <div class="description fadein">For years, AMAGI has worked with healthcare organizations to solve critical issues to improve patient care and operations.</div>
-          </div>
-        </div>
-      </article>
-      <article class="content" id="about">
-        <div class="copy animation fadein">
-          <h2>About Us</h2>
-          <p class="description fadein">Building the Future - Since 2015</p>
-        </div>
-        <div class="buttons animation fadein">
-          <a class="button" href="/contact">Contact Us</a>
-          <a class="button gray" href="/about">Learn More</a>
-        </div>
-      </article>
+        <header class="aos" data-aos="fade" data-aos-duration="1000" data-aos-easing="ease-in-out">
+            <h1>About AMAGI</h1>
+        </header>
+        <article class="extended">
+            <section id="about" class="aos" class="aos" data-aos="fade" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="500">
+                <h2>Lorem ipsum dolor sit amet</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eu ligula metus. Etiam ac congue mi, a consectetur arcu. Sed non neque tempor, venenatis nibh eu, mollis diam. Donec finibus nunc metus, vel tempus purus egestas et. Nunc eget nisi sed tellus tincidunt tincidunt sed a metus. Mauris nulla nisi, sodales ut sapien ut, sollicitudin efficitur ex. Pellentesque <a href="#">habitant</a> morbi tristique senectus et netus et malesuada fames ac turpis egestas. Morbi sodales vel ante porttitor consectetur. Suspendisse finibus interdum tempor. Donec ac quam tellus.</p>
+                <p>Nulla ut consequat felis. Cras a dolor quam. Phasellus consequat auctor orci ut varius. Nullam ornare urna id mauris accumsan, vel pharetra felis euismod. <a href="#">Nunc convallis risus</a> ac sem molestie, eget accumsan augue lobortis. Sed ac sagittis mauris. Nulla ut elementum enim, ac ullamcorper mauris.</p>
+                <p>Interdum et malesuada fames ac ante ipsum primis in faucibus. Maecenas vestibulum imperdiet mi vitae tristique. Aliquam cursus scelerisque dictum. Proin pellentesque ultricies quam, sit amet facilisis nisi tincidunt ut. Sed dignissim metus eu condimentum ullamcorper. Fusce <a href="#">rutrum sodales elementum</a>. Vivamus et risus maximus lorem consectetur elementum. Proin non fringilla odio. Vivamus elit turpis, cursus a suscipit eget, bibendum quis justo. Suspendisse ullamcorper euismod quam ac bibendum. Nulla nec vulputate lacus, sit amet auctor ante. Praesent vel turpis quis tellus volutpat faucibus sed eget mi.</p>
+            </section>
+            <section id="links" class="aos" data-aos="fade" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-delay="1000">
+                <h3>Lorem ipsum</h3>
+                <div class="link">
+                    <p>Lorem ipsum</p>
+                    <a href="#">Lorem ipsum dolor sit</a>
+                </div>
+                <div class="link">
+                    <p>Lorem ipsum</p>
+                    <a href="#">Lorem ipsum dolor sit</a>
+                </div>
+                <div class="link">
+                    <p>Lorem ipsum</p>
+                    <a href="#">Lorem ipsum dolor sit</a>
+                </div>
+                <div class="link">
+                    <p>Lorem ipsum</p>
+                    <a href="#">Lorem ipsum dolor sit</a>
+                </div>
+            </section>
+        </article>
     </main>
     <footer>
       <ul class="footer-list">
@@ -190,7 +145,7 @@
         <li class="mobile-hidden"><a href="/contact">Contact</a></li>
         <li class="mobile-hidden"><a href="https://techpool.io">Careers</a></li>
         <li class="mobile-hidden"><a href="https://amagiacademy.com">Training</a></li>
-        <!--<li class="mobile-hidden">Get Newsletter</li>-->
+        <li class="mobile-hidden">Get Newsletter</li>
         <li><a href="https://www.facebook.com/amagitech/"><i class="fab fa-facebook-f"></i></a></li>
         <li><a href="https://www.instagram.com/amagitech/"><i class="fab fa-instagram"></i></a></li>
         <li><a href="https://github.com/amagitechnologies"><i class="fab fa-github"></i></a></li>
@@ -198,16 +153,30 @@
     </footer>
   </div>
 
-  <script
-    src="https://kit.fontawesome.com/297c891af6.js"
-    crossorigin="anonymous"
-  ></script>
-  <script type="text/javascript" src="./hoverintent.min.js"></script>
-  <script type="text/javascript" src="./menu.js"></script>
-  <script type="text/javascript" src="./hover.js"></script>
-  <script type="text/javascript" src="./animations.js"></script>
-  <script type="text/javascript" src="./bg.js"></script>
-  <script type="text/javascript" src="./cubes.js"></script>
-  <script type="module" src="./amagi.js"></script>
+  <!-- AOS Init -->
+  <script>
+    AOS.init({
+      disable: 'mobile',
+      once: true
+    });
+  </script>
+  <script>
+    const aosAnimation = document.querySelectorAll('.aos');
+
+    observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('aos-animate');
+        } else {
+          entry.target.classList.remove('aos-animate');
+        }
+      });
+    });
+
+    aosAnimation.forEach(aosObject => {
+      observer.observe(aosObject);
+    });
+  </script>
 </body>
+
 </html>

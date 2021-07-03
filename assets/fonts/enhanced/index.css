@@ -1,0 +1,9 @@
+@font-face {
+  font-family: Enhanced;
+  src: url(./jaapokkisubtract-regular.woff);
+}
+
+.logo {
+  font-family: Enhanced;
+  letter-spacing: 1rem;
+}
