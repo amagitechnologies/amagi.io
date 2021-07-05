@@ -23,6 +23,12 @@ article.content:last-of-type {
     background-color: var(--grey50);
 }
 
+a {
+    text-decoration: none;
+    box-shadow: none;
+    transition: none;
+}
+
 h2 {
     font-size: 3.5rem;
 }

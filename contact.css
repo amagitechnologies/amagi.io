@@ -8,6 +8,10 @@ h1 {
     font-size: 6rem;
 }
 
+h2, .subline {
+    text-align: center;
+}
+
 .buttons {
     display: flex;
     position: absolute;
