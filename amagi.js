@@ -1,7 +1,30 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.129.0';
 import { OBJLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/OBJLoader.js";
 
+
+const handleMobile = () => {
+  const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+  const logoText = document.querySelector("article#hero > .logo__text");
+
+  if (isMobile) {
+    logoText.style.display = "initial";
+
+    return true;
+  }
+
+  logoText.style.display = "none";
+  return false;
+}
+
+document.addEventListener("resize", () => {
+  handleMobile();
+});
+
 (function() {
+  const isMobile = handleMobile();
+
+  if (isMobile) return;
+
   // 'To actually be able to display anything with Three.js, we need three things:
   // A scene, a camera, and a renderer so we can render the scene with the camera.'
   // - https://threejs.org/docs/#Manual/Introduction/Creating_a_scene
@@ -64,6 +87,7 @@ that lies between two parallel planes cutting it. - wikipedia.		*/
         box.getCenter( center );
         obj.position.sub( center ); // center the model
         obj.castShadow = true;
+        obj.scale.x = obj.scale.y = obj.scale.z = 1.3;
         scene.add(obj);
       }, (xhr) => {
         console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
@@ -103,7 +127,8 @@ that lies between two parallel planes cutting it. - wikipedia.		*/
       // scene.add( spotLight );
 
       renderer = new THREE.WebGLRenderer({
-        antialias: true
+        antialias: true,
+        alpha: true
       }); /*	Big and bold: AMAGI.	*/
       renderer.shadowMap.enabled = true;
       renderer.shadowMapSoft = true;
@@ -119,7 +144,7 @@ that lies between two parallel planes cutting it. - wikipedia.		*/
       // renderer.shadowMap.type = THREE.PCFSoftShadowMap; // default THREE.PCFShadowMap
       renderer.setPixelRatio(window.devicePixelRatio); /*	Probably 1	*/
       renderer.setSize(WIDTH, HEIGHT); /*	Full screen	*/
-      renderer.setClearColor( 0xffffff, 1); /* Oooh, see-through */
+      renderer.setClearColor( 0xffffff, 0); /* Oooh, see-through */
 
       // controls = new OrbitControls( camera, renderer.domElement );
       // controls.update();

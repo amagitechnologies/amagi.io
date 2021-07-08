@@ -1,5 +1,11 @@
 /* eslint-disable no-undef */
 window.addEventListener("load", function() {
+    const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+  
+    if (isMobile) {
+      return;
+    }
+  
     // shows description of an element on-hover
     const bg = document.querySelector(".bg");
     const darkBg = document.querySelector('.dark-bg');
