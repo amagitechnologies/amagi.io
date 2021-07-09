@@ -1,26 +1,21 @@
 import * as THREE from 'https://cdn.skypack.dev/three@0.129.0';
 import { OBJLoader } from "https://cdn.skypack.dev/three@0.129.0/examples/jsm/loaders/OBJLoader.js";
 
-
-const handleMobile = () => {
-  const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-  const logoText = document.querySelector("article#hero > .logo__text");
-
-  if (isMobile) {
-    logoText.style.display = "initial";
-
-    return true;
+window.addEventListener("load", () => {
+  const handleMobile = () => {
+    const isMobile = window.matchMedia("only screen and (max-width: 760px)").matches;
+    const logoText = document.querySelector("article#hero > .logo__text");
+  
+    if (isMobile) {
+      logoText.style.display = "initial";
+  
+      return true;
+    }
+  
+    logoText.style.display = "none";
+    return false;
   }
 
-  logoText.style.display = "none";
-  return false;
-}
-
-document.addEventListener("resize", () => {
-  handleMobile();
-});
-
-(function() {
   const isMobile = handleMobile();
 
   if (isMobile) return;
@@ -220,4 +215,4 @@ that lies between two parallel planes cutting it. - wikipedia.		*/
       camera.updateProjectionMatrix();
       renderer.setSize(window.innerWidth, window.innerHeight);
   }
-})();
+});
