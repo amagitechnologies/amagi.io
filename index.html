@@ -101,7 +101,6 @@
 </head>
 
 <body>
-  <div class="dark-bg"></div>
   <div class="bg"></div>
 
   <!-- FROSTED GLASS EFFECT -->
@@ -110,7 +109,8 @@
   </div>
 
   <navigation-menu></navigation-menu>
-  <div id="container">
+  <div id="container" class="landing">
+    <div class="loading" id="loader-bg"><div id="loader"></div></div>
     <main>
       <template id="cube-template">
         <div class="cube">
@@ -125,10 +125,10 @@
           </div>
         </div>
       </template>
-      <article class="content animation fadein" id="hero">
+      <article class="content animation fadein landing" id="hero">
         <h1 class="logo__text">AMAGI</h1>
       </article>
-      <article class="content" id="services">
+      <article class="content landing" id="services">
         <div class="copy animation fadein">
           <h2>Services</h2>
           <p class="subline">Solving Difficult Problems as a Service</p>
@@ -157,7 +157,7 @@
           <img id="services__graphic--phone" alt="view of phone" src="assets/images/phone-dark.svg" xmlns="http://www.w3.org/2000/svg">
         </figure> -->
       </article>
-      <article class="content" id="industries">
+      <article class="content landing" id="industries">
         <div class="copy animation fadein">
           <h2>Industries</h2>
           <p class="description">FinTech, MedTech, and More</p>
@@ -173,7 +173,7 @@
           </div>
         </div>
       </article>
-      <article class="content" id="about">
+      <article class="content landing" id="about">
         <div class="copy animation fadein">
           <h2>About Us</h2>
           <p class="description fadein">Building the Future - Since 2015</p>
@@ -204,8 +204,9 @@
     crossorigin="anonymous"
   ></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.0/gsap.min.js"></script>
-  <script type="text/javascript" src="./hoverintent.min.js"></script>
+  <script type="text/javascript" src="./load.js"></script>
   <script type="text/javascript" src="./menu.js"></script>
+  <script type="text/javascript" src="./hoverintent.min.js"></script>
   <script type="text/javascript" src="./hover.js"></script>
   <script type="text/javascript" src="./animations.js"></script>
   <script type="text/javascript" src="./bg.js"></script>

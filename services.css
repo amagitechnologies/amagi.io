@@ -210,12 +210,14 @@ h2 {
 
 .package {
     position: relative;
+    overflow: hidden;
+    overflow-y: scroll;
+    scrollbar-width: none;
     background: var(--grey50);
     margin: 1rem;
     padding: 2rem;
     border-radius: .5rem;
     flex-basis: 25%;
-    overflow: hidden;
 }
 
 .package__description .price {
@@ -240,8 +242,12 @@ h2 {
     box-shadow: none;
     font-size: 1rem;
     padding-left: 2%;
-    padding-bottom: .8rem;
     line-height: 1.8rem;
+    cursor: pointer;
+}
+
+.package__list--item .title:hover {
+    color: var(--accent);
 }
 
 .package__list--item .description {
@@ -314,7 +320,6 @@ footer {
 
     .content.row {
         flex-direction: column;
-        padding: 0;
     }
 
     .content.row .intro {
@@ -323,12 +328,27 @@ footer {
     }
 
     .content.column figure img {
-        width: 60%;
+        width: 45%;
     }
 
-    .content.column .button {
-        position: absolute;
-        bottom: 2%;
+    .content.column {
+        justify-content: flex-start;
+    }
+    
+    .content.column figure {
+        height: 40vh;
+        width: 100vw;
+    }
+
+    .content.column .intro {
+        flex-direction: column;
+        padding: 0 !important;
+        width: 80% !important;
+        height: 100%;
+    }
+
+    .content.column .intro .copy {
+        flex: unset;
     }
 
     .carousel {
@@ -381,37 +401,13 @@ footer {
         padding-left: unset;
         padding-bottom: .1rem;
         margin: 0;
+        cursor: normal;
     }
 
     .package__list--item .description {
         margin: 0;
         padding: 1rem;
         font-size: .7rem;
-    }
-
-    .content.column {
-        justify-content: flex-start;
-    }
-    
-    .content.column figure /* temporary */ {
-        height: 80vh;
-        width: 100vw;
-    }
-
-    .content.column .intro {
-        flex-direction: column;
-        padding: 8% 0 !important;
-        width: 80% !important;
-        height: 100%;
-    }
-
-    .content.column .intro .copy {
-        flex: unset;
-    }
-
-    .content.column .button__outline--dark {
-        position: absolute;
-        bottom: 4vh;
     }
 
     .tabs__title {

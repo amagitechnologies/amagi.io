@@ -6,7 +6,11 @@ window.addEventListener("load", () => {
         const packageDesc = $(packageExp).siblings('.description');
 
         packageExp.addEventListener("click", () => {
-            packageDesc.fadeIn();
+            if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+                return false;
+            } else {
+                packageDesc.fadeIn();
+            }
         });
 
         packageDesc.children('.close').click(() => {

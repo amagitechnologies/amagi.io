@@ -14,6 +14,7 @@
 body {
   display: flex;
   flex-direction: column;
+  overflow-x: hidden;
   height: 100%;
   max-width: 100%;
   margin: 0;
@@ -32,26 +33,44 @@ body {
   background: linear-gradient(149deg, #FFF 0%, #FFF 100%); 
 }
 
-body.dark {
-  color: var(--grey30);
-  background-color: var(--dark);
+/* Loader */
+
+.loading {
+  opacity: 1;
+  transition: all 1s ease-out;
 }
 
-.dark-bg {
+.loading.hidden {
+  opacity: 0 !important;
+}
+
+#loader-bg {
   position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   top: 0;
   left: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  transition: opacity 1s ease-in;
-  opacity: 0;
-  background-color: var(--dark);
-  background: linear-gradient(149deg, rgba(44,83,100,1) 0%, rgba(15,32,39,1) 100%); 
+  text-align: center;
+  opacity: 0.8;
+  background-color: var(--light);
+  z-index: 99;
 }
 
-.dark-bg.visible {
-  opacity: 1;
+#loader {
+  border: 16px solid transparent;
+  border-top: 16px solid var(--grey30);
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }
 
 #container {
@@ -89,7 +108,7 @@ a {
   text-decoration: none;
   color: inherit;
   box-shadow: 0 .1rem 0 0 currentColor;
-  transition: all .10s ease-in;
+  transition: all .20s ease-in;
 }
 
 a:hover:not(.button):not(.button__gray):not(.button__outline):not(.button__outline--dark) {
@@ -187,6 +206,7 @@ nav {
 /* Buttons */
 
 button, .button {
+  height: min-content;
   width: 20%;
   margin: 0 .5rem;
   padding: 1rem;
@@ -198,11 +218,10 @@ button, .button {
   outline: none;
   border: none;
   box-shadow: none;
+  transition: all .35s ease-in, color .15s ease-in;
 }
 
 button {
-  width: 100%;
-  margin: 2% 0;
   color: var(--light);
   background-color: var(--accent);
   cursor: pointer;
@@ -241,6 +260,15 @@ button {
 
 /* Button transitions */
 
+button:hover {
+  background-color: var(--dark);
+}
+
+.button:hover {
+  color: var(--light);
+  background-color: var(--accent);
+}
+
 .button.outline:hover {
   color: var(--light);
   background-color: var(--dark);
@@ -275,6 +303,7 @@ footer {
 
 @media only screen and (max-width: 768px) {
   .navigation {
+    background: var(--light);
     padding: 3% 5% 0 5%;
   }
 
@@ -287,10 +316,10 @@ footer {
     top: 100%;
     margin: 0;
     padding: 2rem 0 0 0;
-    background: var(--light);
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    background-color: var(--light);
   }
 
   .navigation__hamburger {
@@ -314,7 +343,19 @@ footer {
     padding-bottom: 0;
   }
 
-  header h1 {
+  #container:not(.landing) {
+    position: relative;
+    height: unset;
+    overflow-y: unset;
+    scroll-snap-type: unset;
+    scroll-snap-stop: unset;
+  }
+
+  article.content:not(.landing), header.content:not(.landing) {
+    height: unset !important;
+  }
+
+  header h1, h2 {
     font-size: 2rem;
   }
 
@@ -322,9 +363,9 @@ footer {
     margin: 4% 0;
   }
 
-  .button {
+  button, .button {
     width: 60%;
-    margin: 2% 0;
+    margin: 1% 0;
   }
   
   .buttons {

@@ -1,6 +1,6 @@
 .slideup {
-  transition: opacity 1s ease-in,
-              transform 1s ease-in;
+  transition: opacity 350ms ease-in,
+              transform 350ms ease-in;
   transform: translateY(100%);
 }
 
@@ -14,7 +14,8 @@
 }
 
 .fadein {
-  transition: opacity 1s ease-in;
+  opacity: 0;
+  transition: opacity 350ms ease-in;
 }
 
 .fadein.visible {

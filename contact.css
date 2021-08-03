@@ -12,15 +12,6 @@ h2, .subline {
     text-align: center;
 }
 
-.buttons {
-    display: flex;
-    position: absolute;
-    flex-direction: row;
-    justify-content: center;
-    bottom: 10%;
-    width: 100%;
-}
-
 /* Form */
 
 #message-form {
@@ -90,6 +81,19 @@ label {
     margin: 5% 0;
 }
 
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: unset;
+    width: 100%;
+}
+
+button, .button {
+    width: 46%;
+    margin: unset;
+}
+
 @media only screen and (max-width: 768px) {
     header.content {
         justify-content: center;
@@ -114,10 +118,25 @@ label {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+
+    }
+
+    button, .button {
+        box-sizing: border-box;
+        width: 100%;
+        margin: 1% 0;
+    }
+
+    button {
+        order: 1;
+    }
+    
+    .button {
+        order: 2;
     }
 
     .input {
-        margin: 5% 0;
+        margin: 2.5% 0;
     }
 
     #input__personal-details div {

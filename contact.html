@@ -105,16 +105,8 @@
 <body>
   <navigation-menu></navigation-menu>
   <div id="container">
+    <div class="loading" id="loader-bg"><div id="loader"></div></div>
     <main>
-      <header class="content">
-        <div class="copy animation fadein">
-          <h1>Contact Us</h1>
-        </div>
-        <div class="buttons animation fadein">
-          <a class="button" href="https://calendly.com/amagi-sales">Schedule A Call</a>
-          <a class="button gray" href="#message">Message Us</a>
-        </div>
-      </header>
       <article class="content" id="message">
         <div class="copy animation fadein">
           <h2>Send us a message</h2>
@@ -135,7 +127,11 @@
             <label for="message">Message</label>
             <textarea rows="3" name="message" placeholder="I want to learn the ways of the Force..."></textarea>
           </div>
-          <button type="submit">Send Message</button>
+          <div class="buttons">
+            <a class="button gray" href="https://calendly.com/amagi-sales">Schedule A Call</a>
+            <button type="submit">Send Message</button>
+          </div>
+        </form>
       </article>
     </main>
     <footer>
@@ -152,7 +148,8 @@
       </ul>
     </footer>
   </div>
-
+  
+  <script type="text/javascript" src="./load.js"></script>
   <script src="./menu.js"></script>
   <script src="animations.js"></script>
 </body>

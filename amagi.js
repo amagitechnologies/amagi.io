@@ -74,16 +74,26 @@ that lies between two parallel planes cutting it. - wikipedia.		*/
 
       scene = new THREE.Scene();
 
+      var material = new THREE.MeshPhongMaterial({ transparent: true, opacity: 0 });
       loader = new OBJLoader();
 
       loader.load('./assets/amagi-logo.obj', (obj) => {
+
         var box = new THREE.Box3().setFromObject( obj );
         var center = new THREE.Vector3();
         box.getCenter( center );
         obj.position.sub( center ); // center the model
         obj.castShadow = true;
         obj.scale.x = obj.scale.y = obj.scale.z = 1.3;
+
+        obj.traverse( function( child ) {
+          if ( child instanceof THREE.Mesh ) {
+              child.material = material;
+          }
+        } );
+
         scene.add(obj);
+        gsap.to(material, 1, { opacity: 1 });
       }, (xhr) => {
         console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
       }, (error) => {

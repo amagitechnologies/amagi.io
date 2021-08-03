@@ -75,10 +75,8 @@ h2 {
     height: 100%;
     width: 100%;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-content: center;
+    margin: 0 auto;
+    display: block;
 }
 
 .grid__item.image figure img {
@@ -133,16 +131,7 @@ footer {
     article.content {
         flex-direction: column;
         justify-content: center;
-        padding-top: 10vh;
-    }
-
-    article.content:last-of-type {
-        padding: unset;
-    }
-
-    article:last-of-type {
-        height: calc(100vh - 6vh) !important;
-        padding-top: 6vh !important;
+        padding: 8vh 5% 0;
     }
 
     .header, .grid {
@@ -161,7 +150,7 @@ footer {
     }
 
     .grid__item {
-        padding: 15% 8%;
+        padding: 10% 5%;
         width: 45%;
         font-size: .8rem;
     }
