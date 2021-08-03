@@ -172,7 +172,7 @@ h2 {
     opacity: 0.4;
     border-bottom: 2px solid #2f2f2f;
     transition: all 0.25s;
-    width: 15rem;
+    width: 25%;
     min-height: calc(100% - 40px);
 }
 
