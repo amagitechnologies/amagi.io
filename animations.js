@@ -11,7 +11,7 @@ window.addEventListener("load", () => {
       const fadeups = section.querySelectorAll('.animation.delay');
       for (let count = 0; count < fadeups.length; count++) {
           // delaying by 0.5s for that nice, flowing, "waterfall" kind of sequence.
-          fadeups[count].setAttribute('style', 'transition-delay: ' + count * 0.5 + 's');
+          fadeups[count].setAttribute('style', 'transition-delay: ' + count * 100 + 'ms');
       }
     }
 

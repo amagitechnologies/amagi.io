@@ -33,18 +33,16 @@ body {
   background: linear-gradient(149deg, #FFF 0%, #FFF 100%); 
 }
 
-/* Loader */
-
-.loading {
+.visible {
   opacity: 1;
   transition: all 1s ease-out;
 }
 
-.loading.hidden {
+.hidden {
   opacity: 0 !important;
+  transition: all 1s ease-out;
 }
-
-#loader-bg {
+/* #loader-bg {
   position: fixed;
   display: flex;
   justify-content: center;
@@ -57,7 +55,7 @@ body {
   opacity: 0.8;
   background-color: var(--light);
   z-index: 99;
-}
+} */
 
 #loader {
   border: 16px solid transparent;

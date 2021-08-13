@@ -128,7 +128,7 @@
 <body>
   <navigation-menu></navigation-menu>
   <div id="container">
-    <div class="loading" id="loader-bg"><div id="loader"></div></div>
+    <!-- <div class="loading" id="loader-bg"><div class="visible" id="loader"></div></div> -->
     <main>
       <article class="content row" id="consulting">
         <section class="intro animation fadein">
@@ -159,7 +159,7 @@
           <div class="tabs animation fadein" id="tabs-consulting">
             <div class="tabs__content" data-parent="software">
               <div class="packages">
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <!--<div class="title">Software</div>-->
                     <div class="price">Software Development</div>
@@ -207,7 +207,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">DevOps Engineering</div>
                   </div>
@@ -246,7 +246,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">Quality <br>Assurance</div>
                   </div>
@@ -293,7 +293,7 @@
 
             <div class="tabs__content">
               <div class="packages">
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">Cybersecurity Audit</div>
                   </div>
@@ -332,7 +332,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">Technical Support</div>
                   </div>
@@ -370,7 +370,7 @@
 
             <div class="tabs__content">
               <div class="packages">
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">Project <br>Architecture</div>
                   </div>
@@ -401,7 +401,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">External <br>CTO</div>
                   </div>
@@ -471,7 +471,7 @@
           <div class="tabs animation fadein" id="tabs-platform">
             <div class="tabs__content">
               <div class="packages">
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <!--<div class="title">Lorem ipsum dolor</div>-->
                     <div class="price">Strategy</div>
@@ -503,7 +503,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">Engineering</div>
                   </div>
@@ -534,7 +534,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">Management</div>
                   </div>
@@ -570,7 +570,7 @@
             </div>
             <div class="tabs__content">
               <div class="packages">
-                <div class="package">
+                <div class="package animation revealtop delay">
                   <div class="package__description">
                     <div class="price">Datorama</div>
                   </div>
@@ -609,7 +609,7 @@
       </article>
       <article class="content column" id="recruitment">
         <figure>
-          <img id="recruitment__graphic" src="./assets/images/recruitment.png" alt="recruitment">
+          <img id="recruitment__graphic" class="animation fadein" src="./assets/images/recruitment.png" alt="recruitment">
         </figure>
         <section class="intro animation fadein">
           <div class="copy">
@@ -617,29 +617,29 @@
             <h2>Recruitment</h2>
             <a class="button outline dark small" href="/contact">Contact Us</a>
           </div>
-          <p class="description animation fadein">
+          <p class="description animation revealleft">
             We know how to build great systems. We also know how to identify and build great talent for your teams. Work with our insightful team of human experts to find and build your future leaders.
           </p>
         </section>
       </article>
       <article class="content column" id="training">
         <figure>
-          <img id="training__graphic" src="./assets/images/academy.png" alt="training">
+          <img id="training__graphic" class="animation fadein" src="./assets/images/academy.png" alt="training">
         </figure>
         <section class="intro animation fadein">
           <div class="copy">
             <div class="title">Expert</div>
             <h2>Training</h2>
-            <a class="button outline dark small" href="https://amagiacademy.com">Learn More</a>
+            <a class="button outline dark small" href="https://www.amagiacademy.com">Learn More</a>
           </div>
-          <p class="description animation fadein">
+          <p class="description animation revealleft">
             Amagi Academy is an international leader in digital skills training. We teach individuals and organizations to harness the power of modern technologies while empowering them to think differently about challenges they face through expert-led courses, workshops, events, and corporate trainings.
           </p>
         </section>
       </article>
     </main>
     <footer>
-      <ul class="footer-list">
+      <ul class="footer-list animation fadein">
         <li><a href="/about">AMAGI &#169; 2021</a></li>
         <li><a href="/privacy">Privacy Policies</a></li>
         <li class="mobile-hidden"><a href="/contact">Contact</a></li>
@@ -654,7 +654,7 @@
   </div>
   
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
-  <script type="text/javascript" src="./load.js"></script>
+  <!-- <script type="text/javascript" src="./load.js"></script> -->
   <script type="text/javascript" src="./menu.js"></script>
   <script type="text/javascript" src="./expand.js"></script>
   <script type="text/javascript" src="./services.js"></script>

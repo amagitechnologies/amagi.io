@@ -1,12 +1,46 @@
+.slide {
+  opacity: 0;
+  transition: opacity 500ms ease-out,
+              transform 350ms cubic-bezier(.39,.58,.57,1);
+  transform: translateY(50%);
+}
+
 .slideup {
-  transition: opacity 350ms ease-in,
-              transform 350ms ease-in;
+  opacity: 0;
+  transition: opacity 1200ms ease-out,
+              transform 1200ms cubic-bezier(.39,.58,.57,1);
   transform: translateY(100%);
 }
 
-.slideup.visible {
+.slidedown {
+  opacity: 0;
+  transition: opacity 1200ms ease-out,
+              transform 1200ms cubic-bezier(.39,.58,.57,1);
+  transform: translateY(-100%);
+}
+
+.slide.visible, .slideup.visible, .slidedown.visible {
   transform: translateY(0);
-  opacity: 0.1;
+  opacity: 1;
+}
+
+.slideleft {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: opacity 1200ms ease-out,
+              transform 1200ms cubic-bezier(.39,.58,.57,1);
+}
+
+.slideright {
+  opacity: 0;
+  transform: translateX(-100%);
+  transition: opacity 1200ms ease-out,
+              transform 1200ms cubic-bezier(.39,.58,.57,1);
+}
+
+.slideleft.visible, .slideright.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
 
 .animation.slideup.hovered {
@@ -20,4 +54,49 @@
 
 .fadein.visible {
   opacity: 1;
+}
+
+.reveal {
+  opacity: 0;
+  clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
+  transition: clip-path 400ms ease-out,
+              opacity 500ms ease-out;
+}
+
+.reveal.visible {
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.revealbottom {
+  opacity: 0;
+  clip-path: inset(100% 0 0 0);
+  transition: clip-path 800ms ease-out,
+              opacity 800ms ease-out;
+}
+
+.revealtop {
+  opacity: 0;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path 800ms ease-out,
+              opacity 800ms ease-out;
+}
+
+.revealleft {
+  opacity: 0;
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 800ms ease-out,
+              opacity 800ms ease-out;
+}
+
+.revealright {
+  opacity: 0;
+  clip-path: inset(0 0 0 100%);
+  transition: clip-path 800ms ease-out,
+              opacity 800ms ease-out;
+}
+
+.revealbottom.visible, .revealtop.visible, .revealleft.visible, .revealright.visible {
+  opacity: 1;
+  clip-path: inset(0);
 }

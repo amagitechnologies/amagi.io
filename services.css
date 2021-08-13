@@ -129,6 +129,7 @@ h2 {
 .carousel {
     display: block;
     box-sizing: border-box;
+    overflow: hidden;
     flex-basis: 80%;
     width: 100%;
 }

@@ -1,0 +1,305 @@
+{
+    "accessors": [
+        {
+            "bufferView": 0,
+            "componentType": 5126,
+            "count": 862,
+            "max": [
+                0.9650614857673645,
+                0.26097118854522705,
+                0.06103353202342987
+            ],
+            "min": [
+                -0.9650615453720093,
+                -9.313225746154785e-09,
+                -0.061033524572849274
+            ],
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 1,
+            "componentType": 5126,
+            "count": 862,
+            "type": "VEC2"
+        },
+        {
+            "bufferView": 2,
+            "componentType": 5126,
+            "count": 862,
+            "type": "VEC3"
+        },
+        {
+            "bufferView": 3,
+            "componentType": 5123,
+            "count": 1125,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 4,
+            "componentType": 5123,
+            "count": 3,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 5,
+            "componentType": 5123,
+            "count": 810,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 6,
+            "componentType": 5123,
+            "count": 3,
+            "type": "SCALAR"
+        },
+        {
+            "bufferView": 7,
+            "componentType": 5123,
+            "count": 1125,
+            "type": "SCALAR"
+        }
+    ],
+    "asset": {
+        "generator": "Adobe Creative Cloud",
+        "version": "2.0"
+    },
+    "bufferViews": [
+        {
+            "buffer": 0,
+            "byteLength": 10344
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6896,
+            "byteOffset": 10344
+        },
+        {
+            "buffer": 0,
+            "byteLength": 10344,
+            "byteOffset": 17240
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2250,
+            "byteOffset": 27584
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6,
+            "byteOffset": 29834
+        },
+        {
+            "buffer": 0,
+            "byteLength": 1620,
+            "byteOffset": 29840
+        },
+        {
+            "buffer": 0,
+            "byteLength": 6,
+            "byteOffset": 31460
+        },
+        {
+            "buffer": 0,
+            "byteLength": 2250,
+            "byteOffset": 31466
+        }
+    ],
+    "buffers": [
+        {
+            "byteLength": 33716,
+            "uri": "logo.bin"
+        }
+    ],
+    "materials": [
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": true,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "AMAGI Front Inflation Material",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    1.0
+                ],
+                "metallicFactor": 0.07999999821186066,
+                "roughnessFactor": 0.3333333432674408
+            }
+        },
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": true,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "AMAGI Front Bevel Material",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    1.0
+                ],
+                "metallicFactor": 0.07999999821186066,
+                "roughnessFactor": 0.3333333432674408
+            }
+        },
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": true,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "AMAGI Extrusion Material",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    1.0
+                ],
+                "metallicFactor": 0.07999999821186066,
+                "roughnessFactor": 0.3333333432674408
+            }
+        },
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": true,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "AMAGI Back Bevel Material",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    1.0
+                ],
+                "metallicFactor": 0.07999999821186066,
+                "roughnessFactor": 0.3333333432674408
+            }
+        },
+        {
+            "alphaMode": "OPAQUE",
+            "doubleSided": true,
+            "emissiveFactor": [
+                0.0,
+                0.0,
+                0.0
+            ],
+            "name": "AMAGI Back Inflation Material",
+            "pbrMetallicRoughness": {
+                "baseColorFactor": [
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    0.10980392247438431,
+                    1.0
+                ],
+                "metallicFactor": 0.07999999821186066,
+                "roughnessFactor": 0.3333333432674408
+            }
+        }
+    ],
+    "meshes": [
+        {
+            "name": "AMAGI",
+            "primitives": [
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 0,
+                        "TEXCOORD_0": 1
+                    },
+                    "indices": 3,
+                    "material": 0,
+                    "mode": 4
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 0,
+                        "TEXCOORD_0": 1
+                    },
+                    "indices": 4,
+                    "material": 1,
+                    "mode": 4
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 0,
+                        "TEXCOORD_0": 1
+                    },
+                    "indices": 5,
+                    "material": 2,
+                    "mode": 4
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 0,
+                        "TEXCOORD_0": 1
+                    },
+                    "indices": 6,
+                    "material": 3,
+                    "mode": 4
+                },
+                {
+                    "attributes": {
+                        "NORMAL": 2,
+                        "POSITION": 0,
+                        "TEXCOORD_0": 1
+                    },
+                    "indices": 7,
+                    "material": 4,
+                    "mode": 4
+                }
+            ]
+        }
+    ],
+    "nodes": [
+        {
+            "matrix": [
+                0.0011155859101563692,
+                0.0,
+                0.0,
+                0.0,
+                0.0,
+                0.000999982701614499,
+                5.807942670799093e-06,
+                0.0,
+                0.0,
+                -5.807942670799093e-06,
+                0.000999982701614499,
+                0.0,
+                -0.979199230670929,
+                -0.010740424506366253,
+                0.05945948511362076,
+                0.9999999403953552
+            ],
+            "mesh": 0,
+            "name": "AMAGI"
+        }
+    ],
+    "scene": 0,
+    "scenes": [
+        {
+            "name": "Scene",
+            "nodes": [
+                0
+            ]
+        }
+    ]
+}
