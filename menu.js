@@ -26,6 +26,9 @@ customElements.define(
                 <a class="navigation__item--link" href="/industries">Industries</a>
               </li>
               <li class="navigation__item">
+                <a class="navigation__item--link" href="/careers">Careers</a>
+              </li>
+              <li class="navigation__item">
                 <a class="navigation__item--link" href="/contact">Contact Us</a>
               </li>
             </ul>
