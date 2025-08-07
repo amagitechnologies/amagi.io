@@ -72,16 +72,15 @@ h2 {
 }
 
 .grid__item.image figure {
-    height: 100%;
-    width: 100%;
-    padding: 0;
-    margin: 0 auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .grid__item.image figure img {
-    object-fit: contain;
-    width: 80%;
+    max-width: 100%;
+    height: auto;
+    display: block;
 }
 
 .flexmasonry-break {
