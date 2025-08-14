@@ -174,15 +174,15 @@
         </section>
         <section class="carousel">
           <div class="tab-carousel animation fadein" id="nav-consulting">
-            <div class="tabs__title" id="software">
+            <div class="tabs__title" id="strategy">
               <div>Enterprise Technology Strategy & Leadership</div>
               <p>Fractional CTOs, Cloud Modernization, Revenue-Focused Product Design</p>
             </div>
-            <div class="tabs__title" id="devops">
+            <div class="tabs__title" id="data">
               <div>Applied AI, Data, and Automation</div>
               <p>AI Engineering, ML & LLM Ops, Analytics Automation</p>
             </div>
-            <div class="tabs__title" id="data">
+            <div class="tabs__title" id="infra">
               <div>Enterprise-Grade Infrastructure & Support</div>
               <p>Cloud Security, Support Operations, DevOps & Staff Augmentation</p>
             </div>
@@ -518,7 +518,7 @@
 
                 <div class="package animation revealtop delay">
                   <div class="package__description">
-                    <div class="price">Staff Augmentation Done Right</div>
+                    <div class="price">Staff Augmentation</div>
                   </div>
                   <div class="package__list">
                     <div class="package__list--item">
@@ -776,6 +776,28 @@
   </div>
   
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const tabToOpen = params.get('tab'); // e.g., "strategy"
+
+      if (tabToOpen) {
+        // Hide all tabs first
+        document.querySelectorAll('.tab-carousel').forEach(tab => {
+          tab.style.display = 'none';
+        });
+
+        // Find the matching tab by ID
+        const targetTab = document.querySelector(`#nav-${tabToOpen}`);
+        if (targetTab) {
+          targetTab.style.display = 'block';
+
+          // Optional: if you have an "active" class for styling
+          targetTab.classList.add('active');
+        }
+      }
+    });
+  </script>
   <!-- <script type="text/javascript" src="./load.js"></script> -->
   <script type="text/javascript" src="./menu.js"></script>
   <script type="text/javascript" src="./expand.js"></script>
