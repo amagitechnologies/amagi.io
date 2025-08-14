@@ -778,26 +778,27 @@
   <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const params = new URLSearchParams(window.location.search);
-      const tabToOpen = params.get('tab'); // e.g., "strategy"
+      const tabToOpen = sessionStorage.getItem('openTab');
+      sessionStorage.removeItem('openTab'); // clear after use
 
       if (tabToOpen) {
-        // Hide all tabs first
+        // Call your existing tab-opening logic instead of forcing display
+        openTab(tabToOpen);
+      }
+
+      function openTab(tabName) {
+        // Example: hide all tabs and show the chosen one
         document.querySelectorAll('.tab-carousel').forEach(tab => {
           tab.style.display = 'none';
         });
-
-        // Find the matching tab by ID
-        const targetTab = document.querySelector(`#nav-${tabToOpen}`);
+        const targetTab = document.querySelector(`#nav-${tabName}`);
         if (targetTab) {
           targetTab.style.display = 'block';
-
-          // Optional: if you have an "active" class for styling
-          targetTab.classList.add('active');
         }
       }
     });
   </script>
+
   <!-- <script type="text/javascript" src="./load.js"></script> -->
   <script type="text/javascript" src="./menu.js"></script>
   <script type="text/javascript" src="./expand.js"></script>
