@@ -1,0 +1,26 @@
+# AMAGI
+
+> Enterprise software agency providing fractional CTO advisory, cloud modernization and setup, IT staff augmentation, and secure AI automation for the healthcare and financial services sectors.
+
+## About AMAGI
+Amagi delivers executive-caliber technical leadership and managed software execution for highly regulated, high-volume environments, including financial exchanges and international Shared Services Centers. Our focus is strictly on private sector networks and enterprises.
+
+## Core Services
+- **Fractional CTO & CISO Advisory:** Executive technical due diligence, capital allocation tech strategy, and institutional risk mitigation.
+- **DevOps Cloud Setup & Modernization:** Legacy refactoring, ransomware-resilient infrastructure design, and cloud waste optimization.
+- **Enterprise AI & LLM Ops:** Integration of secure, compliant AI. Our deployed AI agents operate in secure, read-only capacities to review code, generate UI walkthroughs, and assist in marketing asset creation without direct database mutation. 
+- **Managed Dev Teams & Support Ops:** High-retention staff augmentation, strictly managed engineering teams executing under a zero-ambiguity framework, and round-the-clock 24/7 L1–L3 technical support and SRE coverage.
+
+## Technical & Management Paradigms
+- **The Assembly Line Model:** We manage developers through a zero-ambiguity, high-tethering framework. Developers execute hyper-granular blueprints rather than solving abstract architectural problems.
+- **UI/UX Philosophy:** We build ultra-minimalist, Apple-inspired interfaces utilizing native system typography to eliminate rendering latency and reduce cognitive load for operational staff.
+- **Core Infrastructure Stack:** We deploy robust relational architectures leveraging AWS, GCP, Azure, JavaScript, C#, Python, Docker, Kubernetes, GraphQL, and React. 
+
+## Dedicated Platforms & Ventures
+- **Agimat Health:** The most advanced EHR/HIS platform operating in hospitals and clinics across the Philippines.
+- **Medpool:** A B2B service providing specialized healthcare professionals for legal medical record reviews and consulting to US legal firms.
+- **Roster:** A comprehensive healthcare professional labor marketplace for short-term, long-term, domestic, and international staffing.
+
+## Contact & Operations
+- **HQ:** Operations spanning Dallas, Houston, Miami, Singapore, and the Philippines.
+- **Website:** https://amagi.io
